@@ -19,6 +19,10 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "QV Trattoria | Authentic Italian Dining in Queensville",
   description: "Experience authentic Italian dining at QV Trattoria in Queensville. Freshly made pasta, premium ingredients, and unforgettable flavors.",
+  icons: {
+    icon: "/icon.svg",
+    apple: "/icon.svg",
+  },
   openGraph: {
     title: "QV Trattoria | Authentic Italian Dining",
     description: "Freshly made pasta, premium ingredients, and unforgettable flavors in Queensville.",
