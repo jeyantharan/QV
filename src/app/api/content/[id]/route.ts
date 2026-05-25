@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import connectDB from '@/lib/mongodb';
 import Content from '@/lib/models/Content';
 import cloudinary from '@/lib/cloudinary';
@@ -21,6 +22,9 @@ export async function DELETE(
 
     // Delete from MongoDB
     await Content.findByIdAndDelete(id);
+
+    revalidatePath('/');
+    revalidatePath('/highlights');
 
     return NextResponse.json({ message: 'Deleted successfully' });
   } catch (error: any) {
@@ -56,6 +60,9 @@ export async function PATCH(
     }
 
     const updatedItem = await Content.findByIdAndUpdate(id, updateData, { new: true });
+
+    revalidatePath('/');
+    revalidatePath('/highlights');
 
     return NextResponse.json(updatedItem);
   } catch (error: any) {

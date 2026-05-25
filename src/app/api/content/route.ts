@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import connectDB from '@/lib/mongodb';
 import Content from '@/lib/models/Content';
 import cloudinary from '@/lib/cloudinary';
@@ -32,6 +33,10 @@ export async function POST(req: NextRequest) {
       imageUrl: uploadResponse.secure_url,
       cloudinaryId: uploadResponse.public_id,
     });
+
+    // Revalidate the cache for paths that display this content
+    revalidatePath('/');
+    revalidatePath('/highlights');
 
     return NextResponse.json(newItem);
   } catch (error: any) {

@@ -1,4 +1,5 @@
 import React from 'react';
+export const dynamic = 'force-dynamic';
 import connectDB from '@/lib/mongodb';
 import Content from '@/lib/models/Content';
 import HighlightsGallery from '@/components/sections/HighlightsGallery';
