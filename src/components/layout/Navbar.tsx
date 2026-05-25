@@ -6,10 +6,12 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
+import AnnouncementBar from "../ui/AnnouncementBar";
 
 const navLinks = [
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
+  { name: "Events", href: "/events" },
 ];
 
 const menuLinks = [
@@ -26,19 +28,24 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+    
+    // Force scroll to top on refresh
+    window.scrollTo(0, 0);
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <>
+      <AnnouncementBar />
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-          isScrolled ? "glass py-2" : "bg-transparent py-4"
+          "fixed left-0 right-0 z-50 transition-all duration-300",
+          isScrolled ? "top-0 glass py-2" : "top-8 md:top-10 bg-transparent py-4"
         )}
       >
         <div className="container mx-auto px-6 max-w-7xl relative flex items-center justify-between">
@@ -59,6 +66,13 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
+            <Link
+              href="/"
+              className="text-neutral-300 hover:text-[var(--accent)] transition-colors tracking-wide text-sm font-medium uppercase"
+            >
+              Home
+            </Link>
+
             <div 
               className="relative group"
               onMouseEnter={() => setIsMenuOpen(true)}
@@ -150,7 +164,15 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl pt-28 px-6 flex flex-col md:hidden"
           >
-            <nav className="flex flex-col gap-6 text-center">
+            <nav className="flex flex-col gap-6 text-center overflow-y-auto">
+              <Link
+                href="/"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-2xl font-serif text-neutral-200 hover:text-[var(--accent)] transition-colors"
+              >
+                Home
+              </Link>
+
               <div className="flex flex-col gap-4 mb-2">
                 <span className="text-[var(--accent)] uppercase tracking-widest text-xs font-medium">Digital Menus</span>
                 {menuLinks.map((link) => (
