@@ -20,7 +20,7 @@ const categories = [
     delay: 0.3
   },
   {
-    title: "Signature Appetizers",
+    title: "Signature Dishes",
     image: "/apper.png",
     delay: 0.4
   }
