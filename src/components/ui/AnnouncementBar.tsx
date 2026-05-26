@@ -8,7 +8,7 @@ export default function AnnouncementBar() {
     <motion.div 
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 h-8 md:h-10 bg-[var(--accent)] text-black flex items-center justify-center z-[60] overflow-hidden"
+      className="absolute top-0 left-0 right-0 h-8 md:h-10 bg-[var(--accent)] text-black flex items-center justify-center z-[60] overflow-hidden"
     >
       <div className="container mx-auto flex items-center justify-center gap-4">
         <Sparkles className="w-4 h-4 animate-pulse hidden sm:block" />
