@@ -6,11 +6,10 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
-import AnnouncementBar from "../ui/AnnouncementBar";
 
 const navLinks = [
-  { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
+  { name: "About", href: "/#about" },
+  { name: "Experience", href: "/#experience" },
   { name: "Events", href: "/events" },
 ];
 
@@ -38,14 +37,13 @@ export default function Navbar() {
 
   return (
     <>
-      <AnnouncementBar />
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className={cn(
           "fixed left-0 right-0 z-50 transition-all duration-300",
-          isScrolled ? "top-0 glass py-2" : "top-8 md:top-10 bg-transparent py-4"
+          isScrolled ? "top-0 glass py-2" : "top-0 bg-transparent py-4"
         )}
       >
         <div className="container mx-auto px-6 max-w-7xl relative flex items-center justify-between">
