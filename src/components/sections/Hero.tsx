@@ -71,10 +71,10 @@ export default function Hero() {
           </a>
           
           <a
-            href="#menu"
-            className="group relative inline-flex items-center justify-center gap-3 border border-white/20 bg-white/5 backdrop-blur-md text-white px-8 py-4 rounded-full font-medium text-lg overflow-hidden transition-all hover:bg-white/10 hover:border-white/40"
+            href="/reserve"
+            className="group relative inline-flex items-center justify-center gap-3 border border-[var(--accent)] bg-[var(--accent)]/5 backdrop-blur-md text-[var(--accent)] px-8 py-4 rounded-full font-medium text-lg overflow-hidden transition-all hover:bg-[var(--accent)] hover:text-black"
           >
-            <span className="relative z-10 uppercase tracking-wider text-sm font-semibold">View Menu</span>
+            <span className="relative z-10 uppercase tracking-wider text-sm font-semibold">Book a Table</span>
           </a>
         </motion.div>
       </div>

@@ -59,8 +59,13 @@ export default function Footer() {
                   <p>4:00 PM – 10:00 PM</p>
                 </div>
               </li>
-              <li className="flex items-center justify-center md:justify-start gap-3 text-neutral-500 text-sm mt-4">
-                <em>Reservations Recommended</em>
+              <li className="flex items-center justify-center md:justify-start mt-6">
+                <Link 
+                  href="/reserve" 
+                  className="bg-[var(--accent)]/10 border border-[var(--accent)]/30 text-[var(--accent)] px-6 py-2 rounded-full text-sm font-medium hover:bg-[var(--accent)] hover:text-black transition-all"
+                >
+                  Book Your Table
+                </Link>
               </li>
             </ul>
           </div>

@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { name: "About", href: "/#about" },
   { name: "Experience", href: "/#experience" },
+  { name: "Reservations", href: "/reserve" },
   { name: "Events", href: "/events" },
 ];
 
@@ -27,7 +28,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    
+
     // Force scroll to top on refresh
     window.scrollTo(0, 0);
 
@@ -71,7 +72,7 @@ export default function Navbar() {
               Home
             </Link>
 
-            <div 
+            <div
               className="relative group"
               onMouseEnter={() => setIsMenuOpen(true)}
               onMouseLeave={() => setIsMenuOpen(false)}
@@ -88,11 +89,11 @@ export default function Navbar() {
                   className="inline-block"
                 >
                   <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </motion.span>
               </button>
-              
+
               <AnimatePresence>
                 {isMenuOpen && (
                   <motion.div
@@ -186,7 +187,7 @@ export default function Navbar() {
                   </a>
                 ))}
               </div>
-              
+
               <div className="h-px w-16 bg-white/10 mx-auto my-2" />
 
               {navLinks.map((link) => (

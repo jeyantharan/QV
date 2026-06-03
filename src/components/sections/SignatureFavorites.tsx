@@ -44,7 +44,7 @@ export default function SignatureFavorites() {
               <span className="italic text-neutral-400">Served with Passion.</span>
             </h2>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -98,7 +98,7 @@ export default function SignatureFavorites() {
                 />
                 {/* Premium Card Structure */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-black/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-700" />
-                
+
                 {/* Subtle Gold Ring on Hover */}
                 <div className="absolute inset-0 border border-white/5 group-hover:border-[var(--accent)]/40 rounded-2xl transition-colors duration-700 z-20 pointer-events-none" />
 
@@ -119,6 +119,27 @@ export default function SignatureFavorites() {
             </a>
           ))}
         </div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mt-24 text-center"
+        >
+          <div className="bg-[#0a0a0a] border border-white/5 rounded-3xl p-12 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-[var(--accent)]/5 to-transparent pointer-events-none" />
+            <h3 className="font-serif text-3xl md:text-4xl text-white mb-6 italic">Ready to savor the experience?</h3>
+            <p className="text-neutral-400 mb-10 max-w-xl mx-auto text-lg font-light leading-relaxed">
+              Join us for an unforgettable evening of authentic Italian flavors and warm hospitality.
+            </p>
+            <a
+              href="/reserve"
+              className="inline-flex items-center justify-center bg-[var(--accent)] text-black px-10 py-4 rounded-full font-bold text-sm uppercase tracking-[0.2em] transition-all duration-300 hover:scale-110 shadow-xl shadow-[var(--accent)]/20"
+            >
+              Book Your Table Now
+            </a>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
